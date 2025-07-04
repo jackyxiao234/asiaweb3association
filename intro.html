@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia Web3 Association - Leading Web3 Investment Bank</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .cta-button {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #a1a1aa;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .secondary-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .secondary-btn:hover {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .portfolio-card .category {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+
+        .portfolio-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .about-text p {
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .team-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        }
+
+        .team-card {
+            position: relative;
+            /* other existing team-card styles */
+        }
+
+        .team-image-container {
+            height: 180px; /* Adjust this to control how much space the image area takes */
+            display: flex;
+            align-items: flex-end; /* This pushes the image to the bottom */
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .team-image-ray {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            position: relative;
+            top: 20px; /* Fine-tune this to adjust exact positioning */
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .team-card .position {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .team-card p {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            color: #a1a1aa;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Contact Info Cards */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-card h3 {
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            color: #a1a1aa;
+            margin: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .primary-btn, .secondary-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Asia Web3 Association</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#" class="cta-button">Partner With Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Mission Statement</h1>
+            <p>"To bridge traditional finance and decentralized innovation, empowering the next generation of Web3 pioneers to reshape the global financial landscape.</p>
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="animateButton(this)">Explore Opportunities</button>
+                <button class="secondary-btn" onclick="animateButton(this)">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <h2>Investment Services</h2>
+        <div class="features-grid">
+            <div class="feature-card" onclick="pulseCard(this)">
+                <div class="feature-icon">💰</div>
+                <h3>Strategic Investment</h3>
+                <p>Comprehensive funding solutions for Web3 startups, from seed to Series A+ rounds with strategic guidance.</p>
+            </div>
+            <div class="feature-card" onclick="pulseCard(this)">
+                <div class="feature-icon">🌐</div>
+                <h3>Market Access</h3>
+                <p>Exclusive network access across Asian markets with regulatory expertise and partnership facilitation.</p>
+            </div>
+            <div class="feature-card" onclick="pulseCard(this)">
+                <div class="feature-icon">📊</div>
+                <h3>Advisory Services</h3>
+                <p>Expert tokenomics design, DeFi strategy, and institutional-grade due diligence for optimal outcomes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3 id="aum-count">0</h3>
+                <p>Assets Under Management</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="portfolio-count">0</h3>
+                <p>Portfolio Companies</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="returns-count">0</h3>
+                <p>Average Returns %</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="exits-count">0</h3>
+                <p>Successful Exits</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #3b82f6, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    ChainLink
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">Oracle Network</span>
+                    <h3>ChainLink</h3>
+                    <p>Decentralized oracle network providing reliable, tamper-proof inputs and outputs for complex smart contracts.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 320% ROI</div>
+                        <div class="portfolio-stat">📍 Singapore</div>
+                        <div class="portfolio-stat">🏦 Series C</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #10b981, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    Polygon
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">Layer 2 Scaling</span>
+                    <h3>Polygon</h3>
+                    <p>Ethereum scaling platform enabling developers to build scalable user-friendly dApps with low transaction fees.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 450% ROI</div>
+                        <div class="portfolio-stat">📍 India</div>
+                        <div class="portfolio-stat">🏦 Series B</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #8b5cf6, #ec4899); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    CertiK
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">Blockchain Security</span>
+                    <h3>CertiK</h3>
+                    <p>Leading security-focused ranking platform to analyze and monitor blockchain protocols and DeFi projects.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 280% ROI</div>
+                        <div class="portfolio-stat">📍 China/US</div>
+                        <div class="portfolio-stat">🏦 Series A</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #f59e0b, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    Axie
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">Play-to-Earn Gaming</span>
+                    <h3>Axie Infinity</h3>
+                    <p>Blockchain-based trading and battling game that allows players to collect, breed, raise, and trade token-based creatures.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 600% ROI</div>
+                        <div class="portfolio-stat">📍 Vietnam</div>
+                        <div class="portfolio-stat">🏦 Seed</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #06b6d4, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    Dapper
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">NFT Platform</span>
+                    <h3>Dapper Labs</h3>
+                    <p>Creator of NBA Top Shot and Flow blockchain, bringing NFTs and digital collectibles to mainstream audiences.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 400% ROI</div>
+                        <div class="portfolio-stat">📍 Canada</div>
+                        <div class="portfolio-stat">🏦 Series D</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" onclick="pulseCard(this)">
+                <div class="portfolio-image" style="background: linear-gradient(45deg, #6366f1, #a855f7); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                    Alchemy
+                </div>
+                <div class="portfolio-content">
+                    <span class="category">Blockchain Developer</span>
+                    <h3>Alchemy</h3>
+                    <p>Blockchain developer platform powering top Ethereum projects and over $30B in transactions for leading companies.</p>
+                    <div class="portfolio-stats">
+                        <div class="portfolio-stat">📈 350% ROI</div>
+                        <div class="portfolio-stat">📍 US</div>
+                        <div class="portfolio-stat">🏦 Series C</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Pioneering Web3 Adoption Across Asia</h3>
+                    <p>Founded in 2018, Asia Web3 Association has emerged as the premier investment bank bridging traditional finance with decentralized technologies. Our team of blockchain experts, financial veterans, and regulatory specialists work at the intersection of innovation and institutional-grade investment strategies.</p>
+                    <p>With headquarters in Singapore and offices across Hong Kong, Tokyo, and Seoul, we've facilitated over $2.8B in Web3 investments, connecting visionary founders with strategic capital across the Asia-Pacific region.</p>
+                    <p>Our unique value proposition combines deep technical understanding of blockchain architectures with traditional investment banking expertise, enabling us to identify and nurture the most promising Web3 projects at every stage of growth.</p>
+                </div>
+                
+                <div class="about-image">
+                    <!-- This would be replaced with an actual image -->
+                    <div style="text-align: center; color: white; padding: 2rem;">
+                        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Asia Web3 HQ</h3>
+                        <p>Singapore Financial District</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 4rem; font-size: 2rem; color: white;">Leadership Team</h3>
+            
+            <div class="team-card">
+            <div class="team-image-container">
+                <div class="team-image-ray">
+                    <img src="ray_wong.jpeg" alt="Ray Wong - Founder & CEO" class="team-photo">
+                </div>
+            </div>
+            <h3>Ray Wong</h3>
+            <p class="position">Founder & CEO</p>
+            <p>Founder of Lutech with 8+ years of experience in fintech and blockchain investments across Asia.</p>
+        </div>
+                
+                <div class="team-card">
+                    <div class="team-image"></div>
+                    <h3>Haruto Tanaka</h3>
+                    <p class="position">CTO</p>
+                    <p>Ex-Google engineer and early Ethereum contributor specializing in scaling solutions.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image"></div>
+                    <h3>Priya Patel</h3>
+                    <p class="position">Head of Investments</p>
+                    <p>Former Sequoia Capital partner with track record of 12 unicorn investments.</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image"></div>
+                    <h3>James Kim</h3>
+                    <p class="position">Regulatory Affairs</p>
+                    <p>Ex-MAS regulator leading our compliance and government relations across APAC.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Ready to explore partnership opportunities? Share your details and we'll connect you with the right team member within 24 hours.</p>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="partnershipType">Partnership Type</label>
+                    <select id="partnershipType" name="partnershipType" required>
+                        <option value="">Select Partnership Type</option>
+                        <option value="startup">Startup Seeking Investment</option>
+                        <option value="institutional">Institutional Investor</option>
+                        <option value="strategic">Strategic Partner</option>
+                        <option value="academic">Academic/Research Institution</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell us about your partnership interest</label>
+                    <textarea id="message" name="message" placeholder="Describe your project, investment goals, or partnership proposal..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Partnership Inquiry</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>General Inquiries</h3>
+                    <p>partnerships@asiaweb3.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Investment Team</h3>
+                    <p>investments@asiaweb3.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Strategic Partnerships</h3>
+                    <p>strategic@asiaweb3.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Asia Web3 Association. Pioneering the future of decentralized finance across Asia.</p>
+        <div class="social-links">
+            <a href="#" onclick="socialPulse(this)">📧</a>
+            <a href="#" onclick="socialPulse(this)">🐦</a>
+            <a href="#" onclick="socialPulse(this)">💼</a>
+            <a href="#" onclick="socialPulse(this)">📱</a>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount =
